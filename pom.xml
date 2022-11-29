@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.technologybrewing</groupId>
+    <artifactId>parent</artifactId>
+    <version>1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Technology Brewing Parent POM</name>
+    <description>Provides a base configuration for Technology Brewing project builds</description>
+    <url>http://technologybrewery.org</url>
+    <inceptionYear>2022</inceptionYear>
+
+    <scm>
+        <connection>scm:git:git@github.com:technologybrewing/parent.git</connection>
+        <developerConnection>scm:git:git@github.com:technologybrewing/parent.git</developerConnection>
+        <url>http://github.com/technologybrewing/parent</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>technologybrewery.org</id>
+            <name>TehcnologyBrewery.org Community</name>
+            <organization>TehcnologyBrewery.org</organization>
+            <organizationUrl>http://technologybrewery.org</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/mit</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

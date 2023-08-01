@@ -4,7 +4,7 @@
 
     <groupId>org.technologybrewery</groupId>
     <artifactId>parent</artifactId>
-    <version>5-SNAPSHOT</version>
+    <version>5</version>
 
     <packaging>pom</packaging>
 
@@ -17,7 +17,7 @@
         <connection>scm:git:ssh://git@github.com/TechnologyBrewery/parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/TechnologyBrewery/parent.git</developerConnection>
         <url>http://github.com/technologybrewing/parent</url>
-      <tag>HEAD</tag>
+      <tag>parent-5</tag>
   </scm>
 
     <distributionManagement>

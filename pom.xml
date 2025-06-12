@@ -18,18 +18,7 @@
         <developerConnection>scm:git:ssh://git@github.com/TechnologyBrewery/parent.git</developerConnection>
         <url>http://github.com/technologybrewing/parent</url>
       <tag>HEAD</tag>
-  </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    </scm>
 
     <developers>
         <developer>
@@ -118,7 +107,7 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${version.maven.release.plugin}</version>
                     <configuration>
-                        <releaseProfiles>ossrh-release</releaseProfiles>
+                        <releaseProfiles>central-release</releaseProfiles>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -175,16 +164,14 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${version.nexus.staging.plugin}</version>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.7.0</version>
+                    <extensions>true</extensions>
                     <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                        <!-- Automatically release staging repository and make deployed artifacts available on
-                             Maven Central. This mitigates the need to manually log into the OSSRH Nexus instance
-                             and release the staging repository -->
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        <publishingServerId>central</publishingServerId>
+                        <autoPublish>true</autoPublish>
+                        <waitUntil>published</waitUntil>
                     </configuration>
                 </plugin>
             </plugins>
@@ -199,7 +186,7 @@
 
     <profiles>
         <profile>
-            <id>ossrh-release</id>
+            <id>central-release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -241,6 +228,10 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>

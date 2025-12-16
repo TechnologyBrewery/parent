@@ -108,6 +108,7 @@
                     <version>${version.maven.release.plugin}</version>
                     <configuration>
                         <releaseProfiles>central-release</releaseProfiles>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
                 </plugin>
                 <plugin>
